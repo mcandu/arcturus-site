@@ -1,21 +1,110 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<header class="site-header header-transparent mo-left">
+  <!-- main header -->
+  <div class="sticky-header main-bar-wraper navbar-expand-lg">
+    <div class="main-bar clearfix ">
+      <div class="container clearfix">
+        <!-- website logo -->
+        <div class="logo-header mostion">
+          <a href="index.html" class="dez-page"><img src="assets/images/logo.png" alt=""></a>
+        </div>
+        <!-- nav toggle button -->
+        <button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-toggle="collapse"
+          data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- extra nav -->
+        <div class="extra-nav">
+          <div class="extra-cell">
+            <a routerLink="/contact-us" class="dez-page site-button primary">Contact Us </a>
+          </div>
+        </div>
+        <!-- main nav -->
+        <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="nav navbar-nav">
+            <li><a routerLink="/home" routerLinkActive="active" class="dez-page">Home <span class="ti-home"></span></a>
+            </li>
+            <li><a routerLink="/about-us">About Us</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- main header END -->
+</header>
 
 <router-outlet></router-outlet>
+
+<!-- Footer -->
+<footer class="site-footer map-footer text-white footer-gradient br-top">
+  <div class="footer-top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-7 col-md-4 col-lg-5 p-a0">
+          <iframe class=""
+            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14444.846145183914!2d75.84806889203723!3d25.16233421040968!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1517832215254"
+            style="border:0; width:100%; min-height:300px;	height:100%; vertical-align: middle;"
+            allowfullscreen></iframe>
+        </div>
+        <div class="col-xl-5 col-md-8 col-lg-7">
+          <div class="row footer-content-link">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="widget widget_services border-0">
+                <h5 class="m-b15 text-white">Company</h5>
+                <ul>
+                  <li><a href="about-1.html">About Us </a></li>
+                  <li><a href="index.html">Home </a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                  <li><a href="about-1.html">About Us</a></li>
+                  <li><a href="service.html">Our Services</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="widget widget_services border-0">
+                <h5 class="m-b15 text-white">Useful Link</h5>
+                <ul>
+                  <li><a href="index.html">Create Account</a></li>
+                  <li><a href="index.html">Company Philosophy </a></li>
+                  <li><a href="contact.html">Corporate Culture</a></li>
+                  <li><a href="about-1.html">Portfolio</a></li>
+                  <li><a href="project-details.html">Project Details</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="widget widget_services border-0">
+                <h5 class="m-b15 text-white">Useful Link</h5>
+                <ul>
+                  <li><a href="index.html">Create Account</a></li>
+                  <li><a href="index.html">Company Philosophy </a></li>
+                  <li><a href="contact.html">Corporate Culture</a></li>
+                  <li><a href="about-1.html">Portfolio</a></li>
+                  <li><a href="project-details.html">Project Details</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom text-left row">
+            <div class="col-md-12 col-sm-12 text-left p-lr30">
+              <span>Copyright &copy; 2018 DexignZone</span>
+              <div class="widget-link m-t10 ">
+                <ul>
+                  <li><a href="index.html"> Home</a></li>
+                  <li><a href="about-2.html"> About</a></li>
+                  <li><a href="#"> Help Desk</a></li>
+                  <li><a href="#"> Privacy Policy</a></li>
+                  <li><a href="contact-1.html"> Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer END-->
+<button class="scroltop fa fa-chevron-up"></button>

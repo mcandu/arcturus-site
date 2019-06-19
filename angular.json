@@ -24,8 +24,41 @@
             ],
             "styles": [
               "src/styles.css"
+
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/jquery.min.js",
+              "src/assets/plugins/wow/wow.js",
+              "src/assets/plugins/bootstrap/js/popper.min.js",
+              "src/assets/plugins/bootstrap/js/bootstrap.min.js",
+              "src/assets/plugins/bootstrap-select/bootstrap-select.min.js",
+              "src/assets/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js",
+              "src/assets/plugins/magnific-popup/magnific-popup.js",
+              "src/assets/plugins/counter/waypoints-min.js",
+              "src/assets/plugins/counter/counterup.min.js",
+              "src/assets/plugins/imagesloaded/imagesloaded.js",
+              "src/assets/plugins/masonry/masonry-3.1.4.js",
+              "src/assets/plugins/masonry/masonry.filter.js",
+              "src/assets/plugins/owl-carousel/owl.carousel.js",
+              "src/assets/plugins/rangeslider/rangeslider.js",
+              "src/assets/js/custom.js",
+              "src/assets/js/dz.carousel.js",
+              "src/assets/js/dz.ajax.js",
+              "src/assets/plugins/tilt/tilt.jquery.js",
+              "src/assets/plugins/revolution/revolution/js/jquery.themepunch.tools.min.js",
+              "src/assets/plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js",
+              "src/assets/plugins/revolution/revolution/js/extensions/revolution.extension.actions.min.js",
+              "src/assets/plugins/revolution/revolution/js/extensions/revolution.extension.carousel.min.js",
+              "src/assets/plugins/revolution/revolution/js/extensions/revolution.extension.kenburn.min.js",
+              "src/assets/plugins/revolution/revolution/js/extensions/revolution.extension.layeranimation.min.js",
+              "src/assets/plugins/revolution/revolution/js/extensions/revolution.extension.migration.min.js",
+              "src/assets/plugins/revolution/revolution/js/extensions/revolution.extension.navigation.min.js",
+              "src/assets/plugins/revolution/revolution/js/extensions/revolution.extension.parallax.min.js",
+              "src/assets/plugins/revolution/revolution/js/extensions/revolution.extension.slideanims.min.js",
+              "src/assets/plugins/revolution/revolution/js/extensions/revolution.extension.video.min.js",
+              "src/assets/plugins/revolution/revolution-addons/particles/js/revolution.addon.particles.min.js",
+              "src/assets/js/rev.slider.js"           
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
