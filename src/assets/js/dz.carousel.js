@@ -743,6 +743,7 @@ jQuery(document).ready(function() {
 	})
 	
 	/* testimonial two function by = owl.carousel.js */
+	/*
 	jQuery('.testimonial-two-dots-bx').owlCarousel({
 		loop:true,
 		autoplay:true,
@@ -767,7 +768,7 @@ jQuery(document).ready(function() {
 			}
 		}
 	})
-	
+	*/
 	/*  Our Classes function by = owl.carousel.js */
 	jQuery('.product-gallery-bx').owlCarousel({
 		loop:true,
@@ -775,7 +776,7 @@ jQuery(document).ready(function() {
 		margin:0,
 		nav:true,
 		dots: false,
-		navText: ['<img src="images/bubbles/errow-left.png" alt=""/>', '<img src="images/bubbles/errow-right.png" alt=""/>'],
+		navText: ['<img src="assets/images/bubbles/errow-left.png" alt=""/>', '<img src="assets/images/bubbles/errow-right.png" alt=""/>'],
 		responsive:{
 			0:{
 				items:1

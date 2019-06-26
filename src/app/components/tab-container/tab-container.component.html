@@ -1,0 +1,15 @@
+<div class="dez-tabs">
+  <div class="m-auto text-center tab-market">
+    <ul class="nav nav-tabs">
+      <li *ngFor="let tab of tabs; let i = index">
+        <a data-toggle="tab" [attr.href]="'#'+tab._index" [class.active]="activeIndex == i" [class.show]="activeIndex == i">
+          <i [attr.class]="tab.icon"></i>
+          <span class="title-head">{{ tab.title }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-content m-t50 text-white">
+    <ng-content></ng-content>
+  </div>
+</div>

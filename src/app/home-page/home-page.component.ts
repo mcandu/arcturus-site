@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Observable, of } from 'rxjs';
+import { Skill } from '../interfaces/skill';
+import { Testimonial } from '../interfaces/testimonial';
+import { HomeSection } from '../interfaces/home_section';
+import { PricingTable } from '../interfaces/pricing_table';
+import { map } from 'rxjs/internal/operators/map';
+import { Tab } from '../interfaces/tab';
+import { tap, share, startWith } from 'rxjs/operators';
+import { HeaderSection } from '../interfaces/header_section';
 
+declare var jQuery;
 
 @Component({
   selector: 'app-home-page',
@@ -8,9 +19,76 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  public skills: Observable<Skill[]>;
+  //public ourWorkspace: Observable<>;
+  public testimonials: Observable<Testimonial[]>;
+  public homeSections: Observable<HomeSection[]>;
+  public tabs: Observable<Tab[]>;
+  public pricingTable: Observable<PricingTable[]>;
+  public headerSection:Observable<HeaderSection[]>
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+
+    window["dz_rev_slider_4"]();
+
+    this.skills = this.dataService.getSkills().pipe(
+      map(value => value.data)
+    );
+
+    this.testimonials = this.dataService.getTestimonials().pipe(
+      map(value => value.data),
+      tap(() => {
+        setTimeout(() => {
+            jQuery('.testimonial-two-dots-bx').owlCarousel({
+              loop:true,
+              autoplay:true,
+              margin:0,
+              nav:true,
+              dots: true,
+              navText: ['<i class="flaticon-left-arrow"></i>', '<i class="flaticon-right-arrow"></i>'],
+              responsive:{
+                0:{
+                  items:1
+                },
+                
+                480:{
+                  items:1
+                },			
+                
+                991:{
+                  items:1
+                },
+                1000:{
+                  items:1
+                }
+              }
+            })
+          })
+        })
+    );
+
+    this.homeSections = this.dataService.getHomeSections().pipe(
+      startWith({data:[]}),
+      map(value => value.data),
+      tap(console.log),
+      share(),
+    );
+
+    this.tabs = this.dataService.getTabs().pipe(
+      map(value => value.data)
+    );
+
+    this.pricingTable = this.dataService.getPricingTable().pipe(
+      map(value => value.data)
+    );
+
+    this.headerSection = this.dataService.getHeaderSection().pipe(
+      map(value => value.data)
+    );
+
+    
   }
 
 }
