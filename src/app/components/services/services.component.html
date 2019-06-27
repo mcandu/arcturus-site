@@ -1,0 +1,28 @@
+<div class="row dzseth">
+  <div class="col-lg-6 col-md-12 col-xs-12 p-a0" *ngIf="type">
+    <img [src]="servicesImg" alt="" class="img-cover" />
+  </div>
+  <div class="col-lg-6 col-md-12 col-xs-12 bg-black-light p-lr0 ">
+    <div class="p-a30 wow fadeInRight" data-wow-delay="0.2s">
+      <div class="max-w500 m-auto p-tb30">
+        <div class="row">
+          <div class="col-lg-12 text-white">
+            <h2>{{ title }}</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 m-b30 text-gray">
+            <p>{{ description }}
+            </p>
+            <a [href]="link" class="site-button radius-xl outline white">{{ button }}<i
+                class="fa fa-long-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-12 col-xs-12 p-a0" *ngIf="!type">
+    <img [src]="servicesImg" alt="" class="img-cover" />
+  </div>
+</div>

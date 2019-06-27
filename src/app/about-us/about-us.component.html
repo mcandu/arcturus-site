@@ -2,13 +2,13 @@
   <!-- inner page banner -->
   <div class="dlab-bnr-inr dlab-bnr-inr-sm overlay-primary bg-pt" style="background-image:url(assets/images/banner/bnr1.jpg);">
     <div class="container">
-      <div class="dlab-bnr-inr-entry">
-        <h1 class="text-white">About us 2</h1>
+      <div class="dlab-bnr-inr-entry" *ngIf="aboutUsSections | async;let aboutUsSections">
+        <h1 class="text-white">{{ aboutUsSections[0]?.title }}</h1>
         <!-- Breadcrumb row -->
         <div class="breadcrumb-row">
           <ul class="list-inline">
-            <li><a href="#">Home</a></li>
-            <li>About us 2</li>
+            <li><a routerLink="/home">Home</a></li>
+            <li>{{ aboutUsSections[0]?.title }}</li>
           </ul>
         </div>
         <!-- Breadcrumb row END -->
@@ -23,55 +23,11 @@
       <div class="container">
         <div class="section-content">
           <div class="row">
-            <div class="col-6 col-lg-3 col-md-6 col-sm-6">
-              <div class="icon-bx-wraper">
-                <div class="icon-md text-black m-b20">
-                  <a href="#" class="icon-cell text-black"><i class="flaticon-trophy"></i></a>
-                </div>
-                <div class="icon-content m-b30">
-                  <h5 class="dlab-tilte">Elegant / Unique design</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod..</p>
-                </div>
-              </div>
-              <div class="icon-bx-wraper m-b30">
-                <div class="icon-md text-black m-b20">
-                  <a href="#" class="icon-cell text-black"><i class="flaticon-technology"></i></a>
-                </div>
-                <div class="icon-content">
-                  <h5 class="dlab-tilte">Different Layout Type</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod..</p>
-                </div>
-              </div>
+            <div class="col-6 col-lg-6 col-md-12 col-sm-12">
+              <app-tile *ngFor="let item of tiles | async" [icon]="item.icon" [title]="item.title" [description]="item.description" class="col-6 col-lg-6 col-md-6 col-sm-12"></app-tile>
             </div>
-            <div class="col-6 col-lg-3 col-md-6 col-sm-6">
-              <div class="icon-bx-wraper">
-                <div class="icon-md text-black m-b20">
-                  <a href="#" class="icon-cell text-black"><i class="flaticon-bar-chart"></i></a>
-                </div>
-                <div class="icon-content m-b30">
-                  <h5 class="dlab-tilte">Make it Simple</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod..</p>
-                </div>
-              </div>
-              <div class="icon-bx-wraper  m-b30">
-                <div class="icon-md text-black m-b20">
-                  <a href="#" class="icon-cell text-black"><i class="flaticon-devices"></i></a>
-                </div>
-                <div class="icon-content">
-                  <h5 class="dlab-tilte">True Responsiveness</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod..</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.2s">
-              <div class="dlab-media dlab-img-overlay6 gradient radius-sm">
-                <img src="assets/images/about/pic1.jpg" alt="">
-              </div>
-            </div>
-            <div class="col-6 col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-              <div class="dlab-media dlab-img-overlay6 gradient radius-sm">
-                <img src="assets/images/about/pic2.jpg" alt="">
-              </div>
+            <div class="col-6 col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.4s" *ngFor="let item of softBoxImages | async">
+              <app-softbox-img [softImg]="item.softbox_img" ></app-softbox-img>
             </div>
           </div>
         </div>
@@ -80,82 +36,21 @@
     <!-- Our Awesome Services End -->
     <!-- About Us -->
     <div class="section-full ">
-      <div class="container-fluid">
-        <div class="row dzseth">
-          <div class="col-lg-6 col-md-12 col-xs-12 p-a0">
-            <img src="assets/images/about/pic3.jpg" alt="" class="img-cover" />
-          </div>
-          <div class="col-lg-6 col-md-12 col-xs-12 bg-black-light p-lr0 ">
-            <div class="p-a30 wow fadeInRight" data-wow-delay="0.2s">
-              <div class="max-w500 m-auto p-tb30">
-                <div class="row">
-                  <div class="col-lg-12 text-white">
-                    <h2>We provide high quality and cost effective services</h2>
-                    <h5 class="m-b30">Since our foundation in 2005 our goal has been to use digital technology to create
-                      experiences.</h5>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-12 m-b30 text-gray">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                      the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.
-                    </p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                      the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.
-                    </p>
-                    <a href="#" class="site-button radius-xl outline white">Read More <i
-                        class="fa fa-long-arrow-right"></i></a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="container-fluid" >
+        <app-services *ngFor="let item of services | async" [link]="item.link" [type]="item.type" [servicesImg]="item.service_img" [title]="item.title" [description]="item.description" [button]="item.button" ></app-services>
       </div>
     </div>
     <!-- About Us End -->
     <!-- About Agency -->
     <div class="section-full content-inner" style="background-image:url(assets/images/pattern/pic1.jpg);">
       <div class="container">
-        <div class="section-head text-black text-center">
-          <h2 class="text-uppercase m-b10">About Agency</h2>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard
-            dummy text ever since the been when an unknown printer.</p>
+        <div class="section-head text-black text-center" *ngIf="aboutUsSections | async;let aboutUsSections">
+          <h2 class="text-uppercase m-b10">{{ aboutUsSections[1]?.title }}</h2>
+          <p>{{ aboutUsSections[1]?.description }}</p>
         </div>
         <div class="row text-center">
-          <div class="col-lg-4 col-md-4 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="dlab-box">
-              <div class="dlab-media dlab-img-effect rotate"> <a href="#"><img src="assets/images/our-work/pic1.jpg"
-                    alt=""></a> </div>
-              <div class="dlab-info p-a30 border-1 bg-white">
-                <h5 class="dlab-title m-t0"><a href="#">Understand the situation</a></h5>
-                <p class="m-b0">Lorem ipsum dolor Fusce varius euismod lacus eget feugiat rorem ipsum dolor
-                  consectetur...</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.4s">
-            <div class="dlab-box">
-              <div class="dlab-media dlab-img-effect rotate"> <a href="#"><img src="assets/images/our-work/pic5.jpg"
-                    alt=""></a> </div>
-              <div class="dlab-info p-a30 border-1 bg-white">
-                <h5 class="dlab-title m-t0"><a href="#">Bring the experience to life</a></h5>
-                <p class="m-b0">Lorem ipsum dolor Fusce varius euismod lacus eget feugiat rorem ipsum dolor
-                  consectetur...</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 m-b30 wow fadeInUp" data-wow-delay="0.6s">
-            <div class="dlab-box">
-              <div class="dlab-media dlab-img-effect rotate"> <a href="#"><img src="assets/images/our-work/pic3.jpg"
-                    alt=""></a> </div>
-              <div class="dlab-info p-a30 border-1 bg-white">
-                <h5 class="dlab-title m-t0"><a href="#">Strategise chart the course</a></h5>
-                <p class="m-b0">Lorem ipsum dolor Fusce varius euismod lacus eget feugiat rorem ipsum dolor
-                  consectetur...</p>
-              </div>
-            </div>
+          <div *ngFor="let item of agencyCards | async" class="col-lg-4 col-md-4 col-sm-6 m-b30 wow fadeInUp" data-wow-delay="0.2s">
+            <app-agency-card [cardImg]="item.cardimg" [title]="item.title" [description]="item.description"></app-agency-card>
           </div>
         </div>
       </div>
@@ -167,41 +62,8 @@
       <div class="container">
         <div class="section-content">
           <div class="row">
-            <div class="col-6 col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeIn" data-wow-delay="0.2s">
-              <div class="counter-style-1">
-                <div class="">
-                  <i class="icon flaticon-bar-chart text-primary"></i>
-                  <span class="counter">4922</span>
-                </div>
-                <span class="counter-text">Completed Projects</span>
-              </div>
-            </div>
-            <div class="col-6 col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeIn" data-wow-delay="0.4s">
-              <div class="counter-style-1">
-                <div class="">
-                  <i class="icon flaticon-avatar text-primary"></i>
-                  <span class="counter">2934</span>
-                </div>
-                <span class="counter-text">Happy Clients</span>
-              </div>
-            </div>
-            <div class="col-6 col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeIn" data-wow-delay="0.6s">
-              <div class="counter-style-1">
-                <div class="">
-                  <i class="icon flaticon-file text-primary"></i>
-                  <span class="counter">2296</span>
-                </div>
-                <span class="counter-text">Questions Answered</span>
-              </div>
-            </div>
-            <div class="col-6 col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeIn" data-wow-delay="0.8s">
-              <div class="counter-style-1">
-                <div class="">
-                  <i class="icon flaticon-pen text-primary"></i>
-                  <span class="counter">1343</span>
-                </div>
-                <span class="counter-text">Ordered Coffee's</span>
-              </div>
+            <div *ngFor="let item of stats | async" class="col-6 col-lg-3 col-md-6 col-sm-6 m-b30 wow fadeIn" data-wow-delay="0.2s">
+              <app-stats [icon]="item.icon" [value]="item.value" [title]="item.title"></app-stats>
             </div>
           </div>
         </div>
@@ -213,12 +75,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="text-center max-w600 m-auto ">
+            <div class="text-center max-w600 m-auto" *ngIf="aboutUsSections | async;let aboutUsSections">
               <div class="m-b20"><i class="fa fa-quote-left font-45 text-primary"></i></div>
-              <h4 class="text-uppercase font-weight-700 font-30">We would love to hear about start your new project?
+              <h4 class="text-uppercase font-weight-700 font-30">{{ aboutUsSections[2]?.title }}
               </h4>
-              <a href="#" class="site-button radius-xl outline outline-2"><span class="p-lr10">Start New
-                  Projects</span></a>
+              <a [href]="aboutUsSections[2]?.link " class="site-button radius-xl outline outline-2"><span class="p-lr10">{{ aboutUsSections[2]?.button }}</span></a>
             </div>
           </div>
         </div>

@@ -18,6 +18,11 @@ import { WorkspaceCardComponent } from './components/workspace-card/workspace-ca
 import { CardSliderItemComponent } from './components/card-slider-item/card-slider-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ParallaxHeaderComponent } from './components/parallax-header/parallax-header.component';
+import { TileComponent } from './components/tile/tile.component';
+import { SoftboxImgComponent } from './components/softbox-img/softbox-img.component';
+import { ServicesComponent } from './components/services/services.component';
+import { AgencyCardComponent } from './components/agency-card/agency-card.component';
+import { StatsComponent } from './components/stats/stats.component';
 
 
 @NgModule({
@@ -37,6 +42,11 @@ import { ParallaxHeaderComponent } from './components/parallax-header/parallax-h
     WorkspaceCardComponent,
     CardSliderItemComponent,
     ParallaxHeaderComponent,
+    TileComponent,
+    SoftboxImgComponent,
+    ServicesComponent,
+    AgencyCardComponent,
+    StatsComponent,
     
   ],
   imports: [

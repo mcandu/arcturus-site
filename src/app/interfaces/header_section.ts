@@ -4,4 +4,6 @@ export interface HeaderSection {
     header2: string;
     button1: string;
     button2: string;
+    link1: string;
+    link2: string;
 }

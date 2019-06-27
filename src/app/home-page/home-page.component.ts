@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Skill } from '../interfaces/skill';
 import { Testimonial } from '../interfaces/testimonial';
 import { HomeSection } from '../interfaces/home_section';
@@ -30,8 +30,6 @@ export class HomePageComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-
-    window["dz_rev_slider_4"]();
 
     this.skills = this.dataService.getSkills().pipe(
       map(value => value.data)

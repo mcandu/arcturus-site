@@ -2,7 +2,8 @@
 	<!-- Slider Banner -->
 	<app-parallax-header *ngFor="let item of headerSection | async" 
 	[header1]="item.header1" [header2]="item.header2" 
-	[button1]="item.button1" [button2]="item.button2">
+	[button1]="item.button1" [button2]="item.button2"
+	[link1]="item.link1" [link2]="item.link2">
 	</app-parallax-header>
 	<!-- Slider Banner -->
 	<!-- contact area -->
@@ -15,7 +16,7 @@
 						<h2 class="text-uppercase"><span class="font-weight-300">{{ homeSections[0]?.title }}</span><br />{{ homeSections[0]?.boldtitle }}</h2>
 						<app-skill-table *ngFor="let item of skills | async" [progress]="item.progress" [title]="item.title"></app-skill-table>
 						<h3 class="m-b10"> </h3>
-						<p>{{ homeSections[0]?.description}}.</p>
+						<p>{{ homeSections[0]?.description }}.</p>
 					</div>
 					<div class="col-md-12 col-lg-6 d-flex ">
 						<app-skill-table-img [tableImage]="'assets/images/about/pic9.jpg'"></app-skill-table-img>

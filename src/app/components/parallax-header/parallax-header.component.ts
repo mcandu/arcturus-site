@@ -11,10 +11,13 @@ export class ParallaxHeaderComponent implements OnInit {
   @Input() header2: string;
   @Input() button1: string;
   @Input() button2: string;
+  @Input() link1: string;
+  @Input() link2: string;
 
   constructor() { }
 
   ngOnInit() {
+    window["dz_rev_slider_4"]();
   }
 
 }
