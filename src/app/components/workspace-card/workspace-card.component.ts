@@ -8,6 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class WorkspaceCardComponent implements OnInit {
 
   @Input() cardImage: string;
+  @Input() title: string;
+  @Input() description: string;
+  @Input() link: string;
 
   constructor() { }
 

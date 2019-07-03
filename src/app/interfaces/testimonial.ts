@@ -3,4 +3,5 @@ export interface Testimonial {
     title: string;
     description: string;
     position: string;
+    image: string;
 }

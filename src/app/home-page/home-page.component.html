@@ -1,9 +1,7 @@
 <div class="page-content bg-white rubik">
 	<!-- Slider Banner -->
-	<app-parallax-header *ngFor="let item of headerSection | async" 
-	[header1]="item.header1" [header2]="item.header2" 
-	[button1]="item.button1" [button2]="item.button2"
-	[link1]="item.link1" [link2]="item.link2">
+	<app-parallax-header *ngFor="let item of headerSection | async" [header1]="item.header1" [header2]="item.header2"
+		[button1]="item.button1" [button2]="item.button2" [link1]="item.link1" [link2]="item.link2">
 	</app-parallax-header>
 	<!-- Slider Banner -->
 	<!-- contact area -->
@@ -13,13 +11,16 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-lg-6" *ngIf="homeSections | async;let homeSections">
-						<h2 class="text-uppercase"><span class="font-weight-300">{{ homeSections[0]?.title }}</span><br />{{ homeSections[0]?.boldtitle }}</h2>
-						<app-skill-table *ngFor="let item of skills | async" [progress]="item.progress" [title]="item.title"></app-skill-table>
+						<h2 class="text-uppercase"><span
+								class="font-weight-300">{{ homeSections[0]?.title }}</span><br />{{ homeSections[0]?.boldtitle }}
+						</h2>
+						<app-skill-table *ngFor="let item of skills | async" [progress]="item.progress"
+							[title]="item.title"></app-skill-table>
 						<h3 class="m-b10"> </h3>
-						<p>{{ homeSections[0]?.description }}.</p>
+						<p>{{ homeSections[0]?.description }}</p>
 					</div>
-					<div class="col-md-12 col-lg-6 d-flex ">
-						<app-skill-table-img [tableImage]="'assets/images/about/pic9.jpg'"></app-skill-table-img>
+					<div class="col-md-12 col-lg-6 d-flex" *ngIf="homeSections | async;let homeSections">
+						<app-skill-table-img [tableImage]="homeSections[0]?.image"></app-skill-table-img>
 					</div>
 				</div>
 			</div>
@@ -29,7 +30,8 @@
 		<div class="section-full content-inner-2 tab-bx br-top">
 			<div class="container">
 				<app-tab-container>
-					<app-tab *ngFor="let item of tabs | async" [icon]="item.icon" [title]="item.title">{{ item.description }}</app-tab>
+					<app-tab *ngFor="let item of tabs | async" [icon]="item.icon" [title]="item.title">
+						{{ item.description }}</app-tab>
 				</app-tab-container>
 			</div>
 		</div>
@@ -42,11 +44,14 @@
 					<div class="col-lg-2"></div>
 					<div class="col-lg-8">
 						<div class="section-head text-center" *ngIf="homeSections | async;let homeSections">
-							<h2 class="text-uppercase"><span class="font-weight-300">{{ homeSections[1]?.title }}</span> <br />{{ homeSections[1]?.boldtitle }}</h2>
+							<h2 class="text-uppercase"><span class="font-weight-300">{{ homeSections[1]?.title }}</span>
+								<br />{{ homeSections[1]?.boldtitle }}</h2>
 							<h5 class="font-weight-300 text-gray-dark">{{ homeSections[1]?.description }}.</h5>
 						</div>
 						<app-slider>
-							<app-card-slider-item *ngFor="let item of testimonials | async" [thumbnail]="'assets/images/testimonials/pic1.jpg'" [name]="item.title" [description]="item.description" [position]="item.position"></app-card-slider-item>
+							<app-card-slider-item *ngFor="let item of testimonials | async"
+								[thumbnail]="item.image" [name]="item.title"
+								[description]="item.description" [position]="item.position"></app-card-slider-item>
 						</app-slider>
 					</div>
 				</div>
@@ -59,19 +64,20 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-head text-center" *ngIf="homeSections | async;let homeSections">
-							<h2 class="text-uppercase "><span class="font-weight-300">{{ homeSections[2]?.title }}</span>
+							<h2 class="text-uppercase "><span
+									class="font-weight-300">{{ homeSections[2]?.title }}</span>
 								<br />{{ homeSections[2]?.boldtitle }}</h2>
-							<h5 class="font-weight-400 text-gray-dark max-w800 m-auto">{{ homeSections[2]?.description }}.</h5>
+							<h5 class="font-weight-400 text-gray-dark max-w800 m-auto">
+								{{ homeSections[2]?.description }}.</h5>
 						</div>
 						<div>
-						<!-- Pricing table-1 Columns 3 with gap -->
-						<app-card2 class="col-lg-4 col-md-4" *ngFor="let item of pricingTable | async; let index = index" 
-						[title]="item.title"
-						[active]="index == 1"
-						[alignment]="index  == 0 ? 'left': index == 2 ? 'right': undefined"
-						[price]="'$' + index "
-						[checks]="item.checks">
-						</app-card2>
+							<!-- Pricing table-1 Columns 3 with gap -->
+							<app-card2 class="col-lg-4 col-md-4"
+								*ngFor="let item of pricingTable | async; let index = index" [title]="item.title"
+								[active]="index == 1"
+								[alignment]="index  == 0 ? 'left': index == 2 ? 'right': undefined"
+								[price]="'$' + index " [checks]="item.checks" [icon]="item.icon" [link]="item.link">
+							</app-card2>
 						</div>
 					</div>
 				</div>
@@ -84,37 +90,15 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-head text-center" *ngIf="homeSections | async;let homeSections">
-							<h2 class="text-uppercase "><span class="font-weight-300">{{ homeSections[3]?.title }}</span> <br />{{ homeSections[3]?.boldtitle }}</h2>
+							<h2 class="text-uppercase "><span
+									class="font-weight-300">{{ homeSections[3]?.title }}</span>
+								<br />{{ homeSections[3]?.boldtitle }}</h2>
 						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-6 col-md-12 col-sm-12">
-						<app-workspace-card [cardImage]="'assets/images/gallery/pic12.jpg'"></app-workspace-card>
-					</div>
-					<div class="col-lg-6 col-md-12 col-sm-12">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<app-workspace-card [cardImage]="'assets/images/gallery/pic12.jpg'"></app-workspace-card>
-							</div>
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<app-workspace-card></app-workspace-card>
-							</div>
-							<div class="col-lg-12 col-md-12 col-sm-12">
-								<app-workspace-card></app-workspace-card>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-md-12 col-sm-12">
-						<app-workspace-card></app-workspace-card>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<app-workspace-card></app-workspace-card>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<app-workspace-card></app-workspace-card>
+					<div *ngFor="let item of workspace_cards | async" class="col-lg-4 col-md-6 col-sm-6">
+						<app-workspace-card [cardImage]="item.image" [title]="item.title" [description]="item.description" [link]="item.link"></app-workspace-card>
 					</div>
 				</div>
 			</div>

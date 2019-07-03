@@ -23,6 +23,8 @@ import { SoftboxImgComponent } from './components/softbox-img/softbox-img.compon
 import { ServicesComponent } from './components/services/services.component';
 import { AgencyCardComponent } from './components/agency-card/agency-card.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { AddressCardComponent } from './components/address-card/address-card.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { StatsComponent } from './components/stats/stats.component';
     ServicesComponent,
     AgencyCardComponent,
     StatsComponent,
+    AddressCardComponent,
+    ContactFormComponent,
     
   ],
   imports: [

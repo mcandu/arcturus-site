@@ -1,6 +1,6 @@
 <div class="pricingtable-inner">
   <div class="pricingtable-price">
-    <div class="pricingtable-icon"><i class="flaticon-rocket-ship"></i>
+    <div class="pricingtable-icon"><i [class]="icon"></i>
     </div>
     <h4 class="font-weight-300 m-t10 m-b0">{{ title }}</h4>
     <span class="pricingtable-bx text-primary">{{ price }}</span> <span class="pricingtable-type">Par
@@ -10,7 +10,7 @@
     <li *ngFor="let check of checks"><i class="fa fa-check text-primary"></i> {{ check }} </li>
   </ul>
   <div class="m-t20">
-    <a href="#" class="site-button outline outline-2 radius-xl button-md">Sign
+    <a [href]="link" class="site-button outline outline-2 radius-xl button-md">Sign
       Up</a>
   </div>
 </div>

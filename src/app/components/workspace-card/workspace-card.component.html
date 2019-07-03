@@ -3,13 +3,12 @@
       alt="">
     <div class="overlay-bx">
       <div class="overlay-icon text-white">
-        <h5>Website Name</h5>
-        <p class="m-b10">Contrary to popular belief, Lorem Ipsum is not simply
-          random text. It has roots</p>
-        <a href="assets/images/gallery/pic12.jpg" class="mfp-link" title="Title Come Here"> <i
+        <h5>{{ title }}</h5>
+        <p class="m-b10">{{ description }}</p>
+        <a [href]="cardImage" class="mfp-link" title="Title Come Here"> <i
             class="ti-fullscreen icon-bx-xs"></i>
         </a>
-        <a href="https://www.google.com/" target="bank"><i class="ti-arrow-top-right icon-bx-xs"></i></a>
+        <a [href]="link" target="bank"><i class="ti-arrow-top-right icon-bx-xs"></i></a>
       </div>
     </div>
   </div>

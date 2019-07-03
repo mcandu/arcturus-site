@@ -14,6 +14,9 @@ export class Card2Component {
   @Input() title: string;
   @Input() price: string;
   @Input() checks: string[];
+  @Input() icon: string;
+  @Input() link: string;
+
 
   @HostBinding('attr.class')
   get _class() {

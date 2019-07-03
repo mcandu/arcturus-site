@@ -9,6 +9,7 @@ import { map } from 'rxjs/internal/operators/map';
 import { Tab } from '../interfaces/tab';
 import { tap, share, startWith } from 'rxjs/operators';
 import { HeaderSection } from '../interfaces/header_section';
+import { WorkspaceCard } from '../interfaces/workspace_card';
 
 declare var jQuery;
 
@@ -20,7 +21,7 @@ declare var jQuery;
 export class HomePageComponent implements OnInit {
 
   public skills: Observable<Skill[]>;
-  //public ourWorkspace: Observable<>;
+  public workspace_cards: Observable<WorkspaceCard[]>;
   public testimonials: Observable<Testimonial[]>;
   public homeSections: Observable<HomeSection[]>;
   public tabs: Observable<Tab[]>;
@@ -86,6 +87,9 @@ export class HomePageComponent implements OnInit {
       map(value => value.data)
     );
 
+    this.workspace_cards = this.dataService.getWorkspaceCard().pipe(
+      map(value => value.data)
+    );
     
   }
 
