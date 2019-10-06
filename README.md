@@ -1,6 +1,6 @@
 # ArcturusSite
 
-This project aims, getting properties of Web Site UI design components (links, titles, descriptions, images, content orders) dynamically via JSON from REST API. Contents created with an engine called Spica content management system. So we can manage the all site contents of our web site by the Spica CMS.
+This project aims, getting properties of Web Site UI design components (links, titles, descriptions, images, content orders) dynamically via JSON from REST API. Front-End (Client) was developed by Angular 7. Also used observable pattern (reactive programming) to show dynamically changes.  Contents created with an engine called Spica content management system. So we can manage the all site contents of our web site by the Spica CMS.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
