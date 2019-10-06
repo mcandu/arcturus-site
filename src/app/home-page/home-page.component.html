@@ -76,7 +76,7 @@
 								*ngFor="let item of pricingTable | async; let index = index" [title]="item.title"
 								[active]="index == 1"
 								[alignment]="index  == 0 ? 'left': index == 2 ? 'right': undefined"
-								[price]="'$' + index " [checks]="item.checks" [icon]="item.icon" [link]="item.link">
+								[price]="'$' + item.price " [checks]="item.checks" [icon]="item.icon" [link]="item.link">
 							</app-card2>
 						</div>
 					</div>

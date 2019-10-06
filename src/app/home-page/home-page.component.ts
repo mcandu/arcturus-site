@@ -20,24 +20,18 @@ declare var jQuery;
 })
 export class HomePageComponent implements OnInit {
 
-  public skills: Observable<Skill[]>;
-  public workspace_cards: Observable<WorkspaceCard[]>;
-  public testimonials: Observable<Testimonial[]>;
-  public homeSections: Observable<HomeSection[]>;
-  public tabs: Observable<Tab[]>;
-  public pricingTable: Observable<PricingTable[]>;
-  public headerSection:Observable<HeaderSection[]>
+  public skills: Observable<Skill>;
+  public workspace_cards: Observable<WorkspaceCard>;
+  public testimonials: Observable<Testimonial>;
+  public homeSections: Observable<HomeSection>
+  public tabs: Observable<Tab>;
+  public pricingTable: Observable<PricingTable>;
+  public headerSection:Observable<HeaderSection>
 
-  constructor(private dataService: DataService) { }
-
-  ngOnInit() {
-
-    this.skills = this.dataService.getSkills().pipe(
-      map(value => value.data)
-    );
+  constructor(private dataService: DataService) { 
+    this.skills = this.dataService.getSkills();
 
     this.testimonials = this.dataService.getTestimonials().pipe(
-      map(value => value.data),
       tap(() => {
         setTimeout(() => {
             jQuery('.testimonial-two-dots-bx').owlCarousel({
@@ -66,30 +60,26 @@ export class HomePageComponent implements OnInit {
             })
           })
         })
-    );
-
+        
+    )
     this.homeSections = this.dataService.getHomeSections().pipe(
       startWith({data:[]}),
-      map(value => value.data),
       tap(console.log),
       share(),
     );
 
-    this.tabs = this.dataService.getTabs().pipe(
-      map(value => value.data)
-    );
+    this.tabs = this.dataService.getTabs();
 
-    this.pricingTable = this.dataService.getPricingTable().pipe(
-      map(value => value.data)
-    );
+    this.pricingTable = this.dataService.getPricingTable();
 
-    this.headerSection = this.dataService.getHeaderSection().pipe(
-      map(value => value.data)
-    );
+    this.headerSection = this.dataService.getHeaderSection();
 
-    this.workspace_cards = this.dataService.getWorkspaceCard().pipe(
-      map(value => value.data)
-    );
+    this.workspace_cards = this.dataService.getWorkspaceCard();
+  }
+
+  ngOnInit() {
+
+  
     
   }
 
